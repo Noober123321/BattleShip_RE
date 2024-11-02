@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship Wars:RE</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/design.css">
+</head>
+<body>
+    
+<!--Seite gemeinsam-->
+
+<div class="parent">
+    <div class="div1">
+        <div class="start">
+            <input type="button" value="Start!" id="start">
+        </div>
+        <div class="zufall">
+            <input type="button" value="zufällige Kombination" id="zufall">
+        </div>
+        <div class="uberschrift"><div class="ba">Ba</div>ttleship Wars: <div class="re">RE</div></div>
+    </div>
+
+
+
+    <div class="div2">
+        <table id="herofield">
+            <thead>
+                <script>
+                    let array = ['&nbsp;','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    
+                    for(let i = 0; i < 11; i++) {
+                        document.write(`<th>${array[i]}</th>`);
+                    }
+                </script>
+            </thead>
+            <tbody>
+                <script>
+                    for(let i = 0; i < 10; i++) {
+                        document.write("<tr>");
+                        document.write(`<th>${i + 1}</th>`); // i + 1 для нумерации строк от 1 до 10
+                        for (let j = 0; j < 10; j++) {
+                            document.write(`<td class="herofield_ship_empty" id="x${j + 1}_y${i + 1}"></td>`); // j + 1 и i + 1 для нумерации столбцов и строк от 1 до 10
+                        }
+                        document.write("</tr>");
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <div class="div3">
+        <table id="enemyfield">
+            <thead>
+                <script>
+                    for(i = 0; i < 11; i++)
+                    {
+                        document.write(`<th>${array[i]}</th>`);
+                    }
+                </script>
+            </thead>
+            <tbody>
+                <script>
+                    for(i = 0; i < 10; i++) 
+                    {
+                        document.write("<tr>");
+                        document.write(`<th>${i + 1}</th>`);
+                        for (j = 0; j < 10; j++)
+                         {
+                            document.write(`<td class = "enemyfield_ship_empty" id = "x${j + 1}_y${i + 1}"></td>`);
+                         }
+                         document.write("</tr>");
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="div4">
+        <div class="div4_1">
+            <input type="button" value="&nbsp;" class="1cellship" id="1cellship_1">
+            <input type="radio" name="ship" id="1cellship_1" class="1cells"><br><br>
+            <input type="button" value="&nbsp;" class="1cellship" id="1cellship_2">
+            <input type="radio" name="ship" id="1cellship_2" class="1cells"><br><br>
+            <input type="button" value="&nbsp;" class="1cellship" id="1cellship_3">
+            <input type="radio" name="ship" id="1cellship_3" class="1cells"><br><br>
+            <input type="button" value="&nbsp;" class="1cellship" id="1cellship_4">
+            <input type="radio" name="ship" id="1cellship_4" class="1cells">
+        </div>
+        <div class="div4_2">
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_1">
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_1">
+            <input type="radio" name="ship" id="2cellship_1" class="2cells"><br><br>
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_2">
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_2">
+            <input type="radio" name="ship" id="2cellship_2" class="2cells"><br><br>
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_3">
+            <input type="button" value="&nbsp;" class="2cellship" id="2cellship_3">
+            <input type="radio" name="ship" id="2cellship_3" class="2cells"><br><br>
+        </div>
+        <div class="div4_3">
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_1">
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_1">
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_1">
+            <input type="radio" name="ship" id="3cellship_1" class="3cells"><br><br>
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_2">
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_2">
+            <input type="button" value="&nbsp;" class="3cellship" id="3cellship_2">
+            <input type="radio" name="ship" id="3cellship_2" class="3cells"><br><br>
+        </div>
+        <div class="div4_4">
+            <input type="button" value="&nbsp;" class="4cellship" id="4cellship_1">
+            <input type="button" value="&nbsp;" class="4cellship" id="4cellship_1">
+            <input type="button" value="&nbsp;" class="4cellship" id="4cellship_1">
+            <input type="button" value="&nbsp;" class="4cellship" id="4cellship_1">
+            <input type="radio" name="ship" id="4cellship_1" class="4cells"><br><br>
+        </div>
+        <div class="div4_5">
+            <label for="horizontal">horizontal</label>
+            <input type="radio" name="orientation" id="horizontal" class="pos" checked><br><br>
+            <label for="vertical">vertical</label>
+            <input type="radio" name="orientation" id="vertical" class="pos"><br><br>
+        </div>
+        
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+    <script src="../JQuery/jquery-3.7.1.min.js"></script>
+    <script src="../Script/script.js"></script>
+</body>
+</html>
